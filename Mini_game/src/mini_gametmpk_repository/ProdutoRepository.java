@@ -1,0 +1,16 @@
+package mini_gametmpk_repository;
+
+public class ProdutoRepository {
+	
+	import java.util.List;
+	import org.springframework.data.jpa.repository.JpaRepository;
+	import org.springframework.data.repository.query.Param;
+	import mini_gametmpk_model.ProdutoModel;
+
+	public interface ProdutoRepository extends JpaRepository<Produto, Long> {
+
+	    List<Produto> findAllByNomeContainingIgnoreCase(@Param("nome") String nome);
+
+	
+}
+
